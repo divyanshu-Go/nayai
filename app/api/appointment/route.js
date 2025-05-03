@@ -33,10 +33,13 @@ export async function GET(req){
   connectDB();
   try {
     const authUser= await getUser(req);
-    const appointments =await Appointment.find();
-    NextResponse.json(appointments)
+    if(!authUser || !authUser._id) {
+      return NextResponse.json({error: "Unauthorized"}, {status:401});
+    }
+    const appointments =await Appointment.find().populate("userId lawyerId", "name");
+    return NextResponse.json({appointments},{status :200})
     
   } catch (error) {
-    
+    return NextResponse.json({error : error.message}, {status: 500})
   }
 }

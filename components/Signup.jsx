@@ -71,7 +71,7 @@ export const SignupForm = () => {
   });
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-    const { fetchUser } = useUser();
+  const { fetchUser } = useUser();
   
 
   const validateForm = () => {

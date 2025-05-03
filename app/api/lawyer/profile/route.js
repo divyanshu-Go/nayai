@@ -12,7 +12,7 @@ export async function GET(req) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const lawyer = await Lawyer.findOne({ _id: user._id });
+    const lawyer = await Lawyer.findOne({ _id: user._id }).select("-password");
 
     if (!lawyer ) {
       return NextResponse.json({ error: "Lawyer profile not found" }, { status: 404 });

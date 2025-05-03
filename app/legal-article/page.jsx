@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useArticles } from '@/context/ArticleContext';
 import CategorySelector from '@/components/CategorySelector';
 import ArticleSection from '@/components/ArticleSection';
+import Loader from '@/components/Loader';
 
 export default function ArticlesPage() {
   const { articles, articlesLoading } = useArticles();
@@ -13,9 +14,9 @@ export default function ArticlesPage() {
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Legal Resources</h1>
       
       {articlesLoading ? (
-        <div className="flex justify-center items-center py-16">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        </div>
+        
+         <Loader text="Loading Articles"/>
+        
       ) : (
         <div className="flex flex-col md:flex-row gap-8 b">
           {/* Left Sidebar */}

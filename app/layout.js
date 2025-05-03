@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} relative min-h-screen flex flex-col `}>
         <AppProvider>
         <Header />
-        <main className="mt-18 mx-auto px-5 py-16 container flex flex-col flex-1 b">{children}</main>
+        <main className="mt-18 mx-auto px-5 py-16 w-full flex flex-col flex-1 b ">{children}</main>
         <Footer />
         </AppProvider>
         
