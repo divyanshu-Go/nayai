@@ -9,10 +9,13 @@ import {
 } from "lucide-react";
 import { useUser } from "@/context/UserContext";
 import { useLawyer } from "@/context/LawyerContext";
+import { useSchemes } from "@/context/SchemeContext";
 
 const Header = () => {
   const { user, fetchUser } = useUser();
   const { loggedinLawyer, fetchLoggedinLawyer } = useLawyer();
+  const { schemes, schemesLoading } = useSchemes();
+  console.log(schemes)
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -46,10 +49,10 @@ const Header = () => {
               Consult Lawyer
             </Link>
             <Link
-              href="/your-rights"
+              href="/scheme"
               className="px-3 py-2 rounded-md hover:bg-blue-50 text-gray-700 hover:text-blue-700 transition-colors"
             >
-              Your Rights
+              Schemes
             </Link>
             <Link
               href="/ask-ai"

@@ -22,7 +22,7 @@ export async function POST(req) {
           role: "user",
           parts: [
             {
-              text: `You are a legal assistant. Answer this question simply and clearly:\n\n${question}`,
+              text: `You are a legal assistant. Answer this question simply and clearly and in Hindi language until specified:\n\n${question}`,
             },
           ],
         },
