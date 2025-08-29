@@ -28,7 +28,7 @@
 npm-debug.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committin
+# env files (can opt-in for committi
 .env*
 
 # vercel
