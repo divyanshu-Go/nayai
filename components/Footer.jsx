@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import Link from "next/link"; 
 import { Twitter, Github, Mail, Linkedin } from "lucide-react";
 
 const Footer = () => {
